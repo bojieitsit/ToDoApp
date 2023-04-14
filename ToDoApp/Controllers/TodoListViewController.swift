@@ -17,11 +17,13 @@ class TodoListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         print(dataFilePath)
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        loadItems()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,8 +43,13 @@ class TodoListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+//        context.delete(itemArray[indexPath.row])
+//        itemArray.remove(at: indexPath.row)
+        
         
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
+        
         self.saveItems()
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -77,6 +84,8 @@ class TodoListViewController: UITableViewController {
         
     }
     
+    //MARK: - Model Manipulation Methods
+    
     func saveItems() {
         do {
             try self.context.save()
@@ -86,17 +95,13 @@ class TodoListViewController: UITableViewController {
         tableView.reloadData()
     }
     
-//    func loadItems() {
-//        if let data = try? Data(contentsOf: dataFilePath!) {
-//            let decoder = PropertyListDecoder()
-//            do {
-//                itemArray = try decoder.decode([Item].self, from: data)
-//            } catch {
-//                print(error)
-//            }
-//        }
-//
-//    }
-    
+    func loadItems() {
+        let requeset: NSFetchRequest<Item> = Item.fetchRequest()
+        do {
+            itemArray = try context.fetch(requeset)
+        } catch {
+            print("error fetching data grom context, \(error)")
+        }
+    }
     
 }
