@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		553CF38A29E9731A006E6EAC /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 553CF38829E9731A006E6EAC /* DataModel.xcdatamodeld */; };
 		55C61C7C29E41F1B00414FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C61C7B29E41F1B00414FF6 /* AppDelegate.swift */; };
 		55C61C7E29E41F1B00414FF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C61C7D29E41F1B00414FF6 /* SceneDelegate.swift */; };
 		55C61C8029E41F1B00414FF6 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C61C7F29E41F1B00414FF6 /* TodoListViewController.swift */; };
 		55C61C8329E41F1B00414FF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C61C8129E41F1B00414FF6 /* Main.storyboard */; };
 		55C61C8529E41F1C00414FF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55C61C8429E41F1C00414FF6 /* Assets.xcassets */; };
 		55C61C8829E41F1C00414FF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55C61C8629E41F1C00414FF6 /* LaunchScreen.storyboard */; };
-		55C61C9029E4376600414FF6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C61C8F29E4376600414FF6 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		553CF38929E9731A006E6EAC /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		55C61C7829E41F1B00414FF6 /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C61C7B29E41F1B00414FF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55C61C7D29E41F1B00414FF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,7 +26,6 @@
 		55C61C8429E41F1C00414FF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55C61C8729E41F1C00414FF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55C61C8929E41F1C00414FF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55C61C8F29E4376600414FF6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,7 @@
 		55C61C9129E437A700414FF6 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				55C61C8F29E4376600414FF6 /* Item.swift */,
+				553CF38829E9731A006E6EAC /* DataModel.xcdatamodeld */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -174,9 +174,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				55C61C8029E41F1B00414FF6 /* TodoListViewController.swift in Sources */,
+				553CF38A29E9731A006E6EAC /* DataModel.xcdatamodeld in Sources */,
 				55C61C7C29E41F1B00414FF6 /* AppDelegate.swift in Sources */,
 				55C61C7E29E41F1B00414FF6 /* SceneDelegate.swift in Sources */,
-				55C61C9029E4376600414FF6 /* Item.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +400,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		553CF38829E9731A006E6EAC /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				553CF38929E9731A006E6EAC /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 553CF38929E9731A006E6EAC /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 55C61C7029E41F1B00414FF6 /* Project object */;
 }
