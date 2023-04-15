@@ -81,7 +81,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="H1I-R7-RRb">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="addButtonPressed:" destination="rAL-Jd-Dti" id="LCA-qB-bdr"/>
+                                <action selector="addButtonPressed:item:" destination="rAL-Jd-Dti" id="aVI-kh-whb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
