@@ -21,6 +21,7 @@ class TodoListViewController: SwipeTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = selectedCategory?.name
         tableView.rowHeight = 70.0
         tableView.delegate = self
         tableView.dataSource = self
