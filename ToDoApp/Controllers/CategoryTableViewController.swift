@@ -11,17 +11,13 @@ import RealmSwift
 class CategoryTableViewController: UITableViewController {
     
     let realm = try! Realm()
-
     var categories: Results<Category>?
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCategories()
     }
-
+    
     //MARK: - TebleView DataSource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,7 +26,7 @@ class CategoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
-
+        
         cell.textLabel?.text = categories?[indexPath.row].name ?? "No categories added yet"
         
         return cell
@@ -71,7 +67,7 @@ class CategoryTableViewController: UITableViewController {
     
     
     //MARK: - Add New Categories
-
+    
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()
@@ -83,7 +79,6 @@ class CategoryTableViewController: UITableViewController {
             if let text = textField.text {
                 newCategory.name = text
                 self.save(category: newCategory)
-                
             }
         }
         
@@ -97,8 +92,5 @@ class CategoryTableViewController: UITableViewController {
         
     }
     
-
-    
-
     
 }
