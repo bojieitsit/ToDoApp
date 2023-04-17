@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class TodoListViewController: UITableViewController {
+class TodoListViewController: SwipeTableViewController {
     
     var todoItems: Results<Item>?
     let realm = try! Realm()
@@ -21,17 +21,20 @@ class TodoListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.rowHeight = 70.0
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    //MARK: - TableView DataSource Method
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todoItems?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
+        
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         if let item = todoItems?[indexPath.row] {
             cell.textLabel?.text = item.title
@@ -42,6 +45,8 @@ class TodoListViewController: UITableViewController {
         
         return cell
     }
+    
+    //MARK: - TebleView Delegate Method
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -61,7 +66,7 @@ class TodoListViewController: UITableViewController {
     }
     
     
-    //MARK: - Add new items
+    //MARK: - Add New Item
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem, item: Item) {
         var textField = UITextField()
@@ -96,15 +101,29 @@ class TodoListViewController: UITableViewController {
         
     }
     
-    //MARK: - Model Methods
+    //MARK: - Save Model Method
     
     func loadItems() {
         todoItems = selectedCategory?.items.sorted(byKeyPath: "title")
         tableView.reloadData()
     }
+    
+    //MARK: - Delete Method
+    
+    override func updateModel(at indexPath: IndexPath) {
+        if let itemForDelition = todoItems?[indexPath.row] {
+            do {
+                try realm.write {
+                    realm.delete(itemForDelition)
+                }
+            } catch {
+                print("Error deleting item \(error)")
+            }
+        }
+    }
 }
 
-//MARK: - Search bar methods
+//MARK: - SearchBar Method
 
 extension TodoListViewController: UISearchBarDelegate {
     
