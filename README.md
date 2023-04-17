@@ -1,5 +1,6 @@
 # ToDoApp
 App, where you can add notes, include it to categories and mark completed. Also you can search throuh categories and items.
+Used third-party libraries: Realm, SwipeCellKit.  
 
 
 <img
