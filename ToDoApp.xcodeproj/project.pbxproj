@@ -11,7 +11,8 @@
 		553CF3B329EB00F3006E6EAC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553CF3B229EB00F3006E6EAC /* Item.swift */; };
 		553CF3B529EB00FB006E6EAC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553CF3B429EB00FB006E6EAC /* Category.swift */; };
 		553CF3B729ED52B3006E6EAC /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553CF3B629ED52B3006E6EAC /* SwipeTableViewController.swift */; };
-		553CF3E829FD4A61006E6EAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 553CF3E729FD4A61006E6EAC /* GoogleService-Info.plist */; };
+		553CF3EB29FD512C006E6EAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 553CF3EA29FD512C006E6EAC /* GoogleService-Info.plist */; };
+		553CF3EE29FD55FD006E6EAC /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 553CF3ED29FD55FD006E6EAC /* FirebaseCrashlytics */; };
 		55C61C7C29E41F1B00414FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C61C7B29E41F1B00414FF6 /* AppDelegate.swift */; };
 		55C61C7E29E41F1B00414FF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C61C7D29E41F1B00414FF6 /* SceneDelegate.swift */; };
 		55C61C8029E41F1B00414FF6 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C61C7F29E41F1B00414FF6 /* TodoListViewController.swift */; };
@@ -28,7 +29,7 @@
 		553CF3B229EB00F3006E6EAC /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		553CF3B429EB00FB006E6EAC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		553CF3B629ED52B3006E6EAC /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
-		553CF3E729FD4A61006E6EAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		553CF3EA29FD512C006E6EAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		55C61C7829E41F1B00414FF6 /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C61C7B29E41F1B00414FF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55C61C7D29E41F1B00414FF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB1DD82E1DFD9ECB36CB4895 /* Pods_ToDoApp.framework in Frameworks */,
+				553CF3EE29FD55FD006E6EAC /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +90,7 @@
 				55C61C9329E437C500414FF6 /* Controllers */,
 				55C61C9429E437FB00414FF6 /* Supporting Files */,
 				55C61C8929E41F1C00414FF6 /* Info.plist */,
-				553CF3E729FD4A61006E6EAC /* GoogleService-Info.plist */,
+				553CF3EA29FD512C006E6EAC /* GoogleService-Info.plist */,
 			);
 			path = ToDoApp;
 			sourceTree = "<group>";
@@ -157,6 +159,9 @@
 			dependencies = (
 			);
 			name = ToDoApp;
+			packageProductDependencies = (
+				553CF3ED29FD55FD006E6EAC /* FirebaseCrashlytics */,
+			);
 			productName = ToDoApp;
 			productReference = 55C61C7829E41F1B00414FF6 /* ToDoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -185,6 +190,9 @@
 				Base,
 			);
 			mainGroup = 55C61C6F29E41F1B00414FF6;
+			packageReferences = (
+				553CF3EC29FD55FD006E6EAC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 55C61C7929E41F1B00414FF6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -200,7 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55C61C8829E41F1C00414FF6 /* LaunchScreen.storyboard in Resources */,
-				553CF3E829FD4A61006E6EAC /* GoogleService-Info.plist in Resources */,
+				553CF3EB29FD512C006E6EAC /* GoogleService-Info.plist in Resources */,
 				55C61C8529E41F1C00414FF6 /* Assets.xcassets in Resources */,
 				55C61C8329E41F1B00414FF6 /* Main.storyboard in Resources */,
 			);
@@ -509,6 +517,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		553CF3EC29FD55FD006E6EAC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		553CF3ED29FD55FD006E6EAC /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 553CF3EC29FD55FD006E6EAC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 55C61C7029E41F1B00414FF6 /* Project object */;
 }
