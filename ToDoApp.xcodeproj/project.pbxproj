@@ -11,6 +11,7 @@
 		553CF3B329EB00F3006E6EAC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553CF3B229EB00F3006E6EAC /* Item.swift */; };
 		553CF3B529EB00FB006E6EAC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553CF3B429EB00FB006E6EAC /* Category.swift */; };
 		553CF3B729ED52B3006E6EAC /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553CF3B629ED52B3006E6EAC /* SwipeTableViewController.swift */; };
+		553CF3E829FD4A61006E6EAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 553CF3E729FD4A61006E6EAC /* GoogleService-Info.plist */; };
 		55C61C7C29E41F1B00414FF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C61C7B29E41F1B00414FF6 /* AppDelegate.swift */; };
 		55C61C7E29E41F1B00414FF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C61C7D29E41F1B00414FF6 /* SceneDelegate.swift */; };
 		55C61C8029E41F1B00414FF6 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C61C7F29E41F1B00414FF6 /* TodoListViewController.swift */; };
@@ -27,6 +28,7 @@
 		553CF3B229EB00F3006E6EAC /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		553CF3B429EB00FB006E6EAC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		553CF3B629ED52B3006E6EAC /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
+		553CF3E729FD4A61006E6EAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		55C61C7829E41F1B00414FF6 /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C61C7B29E41F1B00414FF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55C61C7D29E41F1B00414FF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				55C61C9329E437C500414FF6 /* Controllers */,
 				55C61C9429E437FB00414FF6 /* Supporting Files */,
 				55C61C8929E41F1C00414FF6 /* Info.plist */,
+				553CF3E729FD4A61006E6EAC /* GoogleService-Info.plist */,
 			);
 			path = ToDoApp;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				55C61C7529E41F1B00414FF6 /* Frameworks */,
 				55C61C7629E41F1B00414FF6 /* Resources */,
 				804AAB3B8333B34B3F8FE856 /* [CP] Embed Pods Frameworks */,
+				553CF3E929FD4C31006E6EAC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -196,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55C61C8829E41F1C00414FF6 /* LaunchScreen.storyboard in Resources */,
+				553CF3E829FD4A61006E6EAC /* GoogleService-Info.plist in Resources */,
 				55C61C8529E41F1C00414FF6 /* Assets.xcassets in Resources */,
 				55C61C8329E41F1B00414FF6 /* Main.storyboard in Resources */,
 			);
@@ -204,6 +209,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		553CF3E929FD4C31006E6EAC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
 		804AAB3B8333B34B3F8FE856 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -404,6 +428,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = DQ6AN9K3FQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDoApp/Info.plist;
